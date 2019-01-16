@@ -43,7 +43,7 @@
 
 <h3 id="index2">Instalación</h3>
 <ol>
-	<li>Hacer click en el boton "Deploy to Salesforce", permitir uso de la herramienta y hace click en "Deploy"</li>
+	<li>Hacer click en el boton "Deploy to Salesforce", permitir uso de la herramienta y hacer click en "Deploy"</li>
 	<li>Crear clases extendiendo la clase "TriggersHandler"</li>
 </ol>
 
