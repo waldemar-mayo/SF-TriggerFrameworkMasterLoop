@@ -1,6 +1,5 @@
 # Salesforce Trigger Framework "Master Loop"
 <br/>
-<br/>
 
 # Deploy to Salesforce ORG
 <br/>
