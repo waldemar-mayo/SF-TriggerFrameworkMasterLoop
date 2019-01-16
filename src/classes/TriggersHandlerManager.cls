@@ -18,6 +18,7 @@ public without sharing class TriggersHandlerManager {
 	}
 
   	private static set<String> triggersBypassed = new set<String>();
+  	private static set<String> triggersBypassedByCustomMetadata;
     
     
     public static Boolean isByPassTrigger(String triggerName){
@@ -43,7 +44,13 @@ public without sharing class TriggersHandlerManager {
         if(triggersBypassed.contains(triggerName)){
         	return false;
         }
-        return getUser().TriggersByPass__c != null ? (!getUser().TriggersByPass__c.contains(triggerName)) : true;
+        if(triggersBypassedByCustomMetadata == null){
+        	triggersBypassedByCustomMetadata = new set<String>();
+        	for(TriggerByPass__mdt tbp: [SELECT MasterLabel, DeveloperName FROM TriggerByPass__mdt]){
+        		triggersBypassedByCustomMetadata.add(tbp.DeveloperName);
+        	}
+        }
+        return (getUser().TriggersByPass__c != null ? (!getUser().TriggersByPass__c.contains(triggerName)) : true) || triggersBypassedByCustomMetadata.contains(triggerName);
     }
 
 	@testVisible private static List<SObject> triggerNew;
