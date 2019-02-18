@@ -10,8 +10,8 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>*</members>
-        <name>CustomMetadata</name>
+        <members>TriggerByPass__mdt</members>
+        <name>CustomObject</name>
     </types>
     <version>42.0</version>
 </Package>
